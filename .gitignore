@@ -8,56 +8,972 @@ build/
 coverage/
 htmlcov/
 
-# Environment variables
+# Environment
 .env
 .env.local
 .env.*
 
+# Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.mypy_cache/
+
 # Logs
 *.log
 
-# IDE files
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 *.tmp
 
-# Python cache
+# Docker
+.dockerenv
+
+# Coverage
+.coverage
+
+# Distribution / packaging
+.Python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
+.MF
+classes/
+lib/
+logs/
 
-# Testing
-.pytest_cache/
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+coverage.lcov
+
+# Translations
+*.mo
+*.pot
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask
+instance/
+.webassets-cache
+
+# Scrapy
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Sage
+.hg/
+.sage/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
 .mypy_cache/
+.dmypy.json
+dmypy.json
 
-# OS generated files
+# Pyre
+.pyre/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Directory for instrumented libs
+coverage/
+
+# Gulp
+.lib/
+
+# Sass
+.sass-cache/
+
+# Temporary folders
+temp/
+tmp/
+
+# User-specific
+*.tmPreferences
+
+# Editor-specific
+*.swp
+*.swo
+
+# Backup files
+*.bak
+*~
+
+# Package manager
+node_modules/
+jspm_packages/
+
+# Bower dependency directory (deprecated)
+bower_components/
+
+# Grunt intermediate storage (deprecated)
+.grunt
+
+# NPM debug log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+.yarn-integrity
+.yarn-metadata.json
+node/
+jspm_packages/
+
+# webpack
+webpack-stats.json
+
+# Jest
+coverage/
+*.lcov
+
+# Code coverage
+coverage.xml
+*.gcda
+
+# Vue
+dist/
+.node_version
+.nuxt/
+.vuepress/dist
+.output.js
+
+# React
+build/
+*.hot-update.json
+
+# Angular
+dist/
+tmp/
+.angular-cli.json
+
+# Ember
+dist/
+tmp/
+.ember-cli
+.ember-local
+
+# Meteor
+.meteor/local
+
+# Tessel
+.tesselinclude
+
+# Rails
+*.gem
+*.rbc
+pkg/
+*.svg
+.rspec
+capybara-*.html
+.rails
+public/system
+coverage/
+*.csv
+*.payload
+*.webapp
+spec/reports
+spec/examples.txt
+tmp/
+.rake_tasks
+.rid
+.rbx
+*.duck
+*.so
+c extension build/
+InstalledFiles
+.bundle
+.vendor
+.rbx
+.ruby-version
+*_flymake.*
+*~
+\#
+*.#
+*.swp
+*~
 .DS_Store
-Thumbs.db
+.sass-cache
+bpm-files/
+.rvmrc
+.secret
+/config.ru
+/Gemfile.lock
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/log/*
+/tmp/**
+/public/system/**
+/public/uploads/**
+/public/assets/**
+/public/packs/*
+storage/
+!storage/.keep
+/public/packs-test/*
+coverage/
+*.db
+*.log
+tmp/*
+.rvmrc
+.vendor
+.secret
+.svn/
+CVS/
+.git/
 
-# Compression files
-*.zip
-*.gz
-*.tar
-*.tgz
-*.bz2
-*.xz
-*.7z
-*.rar
-*.zst
-*.lz4
-*.lzh
-*.cab
-*.arj
-*.rpm
+# Laravel
+vendor/
+composer.phar
+composer.lock
+.env
+Homestead.json
+Homestead.yaml
+Vagrantfile
+.phpunit.result.cache
+.php_cs.cache
+.php_cs.dist.cache
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+.styleci.yml
+.php_cs
+.php_cs.dist
+!.php_cs
+!.php_cs.dist
+.php_cs.cache
+.phpunit.result.cache
+.scrutinizer.yml
+.php_cs.dist.cache
+.php_cs.cache
+.php_cs
+.php_cs.dist
+!.php_cs
+!.php_cs.dist
+.php_cs.cache
+.phpunit.result.cache
+
+# Symfony
+/vendor
+/bin/console
+var/cache/*
+var/logs/*
+var/sessions/*
+.php_cs
+.php_cs.dist
+!.php_cs
+!.php_cs.dist
+.php_cs.cache
+.phpunit.result.cache
+web/bundles/
+app/config/parameters.yml
+
+# CakePHP
+logs/
+tmp/
+app/webroot/files/
+app/webroot/uploads/
+app/webroot/cache/
+app/tmp/
+*.log
+*.tmp
+*.cache
+cake_dev*
+
+# CodeIgniter
+userfiles/
+uploads/
+cache/
+logs/
+*.log
+*.tmp
+*.cache
+system/
+application/logs/
+application/cache/
+
+# Zend Framework
+public/uploads/
+data/cache/
+data/logs/
+data/sessions/
+data/tmp/
+.cache/
+*.cache
+*.log
+*.tmp
+
+# FuelPHP
+fuel/app/cache/
+fuel/app/logs/
+fuel/app/tmp/
+*.log
+*.tmp
+*.cache
+
+# Lithium
+libraries/
+.tmp/
+*.log
+*.tmp
+*.cache
+
+# Yii
+runtime/
+assets/
+*.log
+*.tmp
+*.cache
+
+# Phalcon
+cache/
+logs/
+sessions/
+*.log
+*.tmp
+*.cache
+
+# Slim
+logs/
+cache/
+*.log
+*.tmp
+*.cache
+
+# Lumen
+bootstrap/cache/
+*.log
+*.tmp
+*.cache
+
+# Phinx
+phinx.log
+
+# Laravel Vapor
+.vapor/
+
+# Laravel Dusk
+.dusk/
+.phpunit.result.cache
+
+# Laravel Telescope
+.telescope/
+
+# Laravel Sanctum
+sanctum.log
+
+# Laravel Octane
+_octane
+octane-server-state.json
+
+# WordPress
+wp-content/cache/
+*.sql
+*.sql.gz
+
+# Drupal
+sites/default/files/
+*.sql
+*.sql.gz
+drush-backups/
+vendor/
+
+# Magento
+var/
+generated/
+pub/static/_cache/
+app/etc/config.php
+app/etc/env.php
+dev/tests/acceptance/_output/
+*.log
+*.tmp
+*.cache
+
+# PrestaShop
+config/xml/
+app/logs/
+*.log
+*.tmp
+*.cache
+
+# Shopware
+var/
+*.log
+*.tmp
+*.cache
+
+# OpenCart
+image/cache/
+image/catalog/demo/
+config.php
+admin/config.php
+*.log
+*.tmp
+*.cache
+
+# Vagrant
+.vagrant/
+vagrant-*.out
+vagrant-*.err
+
+# Ansible
+.retry/
+.ansible-lint
+.ansible.cfg
+
+# Terraform
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+
+# Kubernetes
+.kube/
+
+# Helm
+charts/
+*.lock
+
+# Docker
+.dockerignore
+.dockerenv
+!Dockerfile
+!docker-compose.yml
+
+# Heroku
+.env
+.heroku/
+
+# Netlify
+.netlify/
+
+# Vercel
+.vercel/
+
+# Cloudflare Pages
+.cloudflare/
+
+# GitHub
+.github/
+
+# GitLab
+.gitlab/
+
+# Bitbucket
+.bitbucket/
+
+# AWS
+.aws/
+
+# Azure
+.azure/
+
+# Google Cloud
+.gcloud/
+
+# Firebase
+.firebase/
+
+# Expo
+.expo/
+web-build/
+
+# Capacitor
+capacitor.config.json
+.capacitor/
+
+# Cordova
+config.xml
+cordova/
+hooks/
+platforms/
+plugins/
+
+# Ionic
+ionic.config.json
+.ionic/
+
+# NativeScript
+.nativescript/
+package-lock.json
+node_modules/
+
+# React Native
+node_modules/
+ios/Pods/
+ios/build/
+android/build/
+android/app/build/
+*.apk
+*.aab
+*.ipa
+.expo/
+.webpack/
+metro.config.js
+rn-cli.config.js
+
+# Flutter
+.dart_tool/
+.build/
+flutter_export_environment.sh
+**/ios/Flutter/.last_build_id
+**/ios/Runner/GeneratedPluginRegistrant.*
+
+# Electron
+node_modules/
+dist_electron/
+release/
+*.app
+*.exe
+*.dmg
 *.deb
-*.Z
-*.lz
-*.lzo
+*.rpm
+*.msi
+*.AppImage
+
+# NW.js
+node_modules/
+cache/
+*.nw
+*.exe
+*.app
+*.dmg
+*.deb
+*.rpm
+*.msi
+*.AppImage
+
+# Tauri
+node_modules/
+target/
+src-tauri/target/
+src-tauri/tauri.conf.json
+src-tauri/Cargo.lock
+
+# Rust
+target/
+Cargo.lock
+*.rs.bk
+
+# Go
+*.out
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.prof
+vendor/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.zip
 *.tar.gz
-*.tar.bz2
-*.tar.xz
-*.tar.zst
+*.rar
+target/
+.gradle/
+build/
+!gradlew
+!gradlew.bat
+!mvnw
+!mvnw.cmd
+*.iml
+*.ipr
+*.iws
+.idea/
+*.sw?
+.DS_Store
+.classpath
+.project
+.settings/
+bin/
+gen/
+out/
+build/
+.externalToolBuilders/
+*.launch
+.cproject
+.project
+.settings/
+bin/
+gen/
+out/
+build/
+.externalToolBuilders/
+*.launch
+.cproject
+.project
+.settings/
+bin/
+gen/
+out/
+build/
+.externalToolBuilders/
+*.launch
+.cproject
+*.properties
+
+# C#
+*.sln
+*.csproj
+*.user
+*.userosscache
+*.suo
+*.pdb
+*.userprefs
+*.svclog
+*.sdf
+*.opensdf
+*.user
+*.cache
+*.ilk
+*.meta
+*.pidb
+*.prefab
+*.booproj
+*.svd
+*.signal
+*.pidb.meta
+*.prefab.meta
+*.mat.meta
+*.physicsmeta
+*.physics
+*.prefab
+*.prefab.meta
+*.unity
+*.c
+*.cpp
+*.h
+*.hpp
+*.o
+*.obj
+*.lib
+*.dll
+*.exe
+*.so
+*.a
+*.dylib
+*.ncb
+*.opt
+*.plg
+*.ncf
+*.aps
+*.pch
+*.res
+*.resx
+*.mdb
+*.dep
+*.csproj.user
+*.userosscache
+*.suo
+*.userprefs
+*.pidb.meta
+*.booproj
+*.svd
+*.signal
+*.pidb.meta
+*.prefab.meta
+*.mat.meta
+*.physicsmeta
+*.physics
+*.prefab
+*.prefab.meta
+*.unity
+*.c
+*.cpp
+*.h
+*.hpp
+*.o
+*.obj
+*.lib
+*.dll
+*.exe
+*.so
+*.a
+*.dylib
+*.ncb
+*.opt
+*.plg
+*.ncf
+*.aps
+*.pch
+*.res
+*.resx
+*.mdb
+*.dep
+*.csproj.user
+*.userosscache
+*.suo
+*.userprefs
+*.pidb.meta
+*.booproj
+*.svd
+*.signal
+*.pidb.meta
+*.prefab.meta
+*.mat.meta
+*.physicsmeta
+*.physics
+*.prefab
+*.prefab.meta
+*.unity
+*.c
+*.cpp
+*.h
+*.hpp
+*.o
+*.obj
+*.lib
+*.dll
+*.exe
+*.so
+*.a
+*.dylib
+*.ncb
+*.opt
+*.plg
+*.ncf
+*.aps
+*.pch
+*.res
+*.resx
+*.mdb
+*.dep
+*.csproj.user
+*.userosscache
+*.suo
+*.userprefs
+*.pidb.meta
+*.booproj
+*.svd
+*.signal
+*.pidb.meta
+*.prefab.meta
+*.mat.meta
+*.physicsmeta
+*.physics
+*.prefab
+*.prefab.meta
+*.unity
+*.c
+*.cpp
+*.h
+*.hpp
+*.o
+*.obj
+*.lib
+*.dll
+*.exe
+*.so
+*.a
+*.dylib
+*.ncb
+*.opt
+*.plg
+*.ncf
+*.aps
+*.pch
+*.res
+*.resx
+*.mdb
+*.dep
+*.csproj.user
+*.userosscache
+*.suo
+*.userprefs
+*.pidb.meta
+*.booproj
+*.svd
+*.signal
+*.pidb.meta
+*.prefab.meta
+*.mat.meta
+*.physicsmeta
+*.physics
+*.prefab
+*.prefab.meta
+*.unity
+*.c
+*.cpp
+*.h
+*.hpp
+*.o
+*.obj
+*.lib
+*.dll
+*.exe
+*.so
+*.a
+*.dylib
+*.ncb
+*.opt
+*.plg
+*.ncf
+*.aps
+*.pch
+*.res
+*.resx
+*.mdb
+*.dep
+*.csproj.user
+*.userosscache
+*.suo
+*.userprefs
+*.pidb.meta
+*.booproj
+*.svd
+*.signal
+*.pidb.meta
+*.prefab.meta
+*.mat.meta
+*.physicsmeta
+*.physics
+*.prefab
+*.prefab.meta
+*.unity
+*.c
+*.cpp
+*.h
+*.hpp
+*.o
+*.obj
+*.lib
+*.dll
+*.exe
+*.so
+*.a
+*.dylib
+*.ncb
+*.opt
+*.plg
+*.ncf
+*.aps
+*.pch
+*.res
+*.resx
+*.mdb
+*.dep
+*.csproj.user
+*.userosscache
+*.suo
+*.userprefs
+*.pidb.meta
+*.booproj
+*.svd
+*.signal
+*.pidb.meta
+*.prefab.meta
+*.mat.meta
+*.physicsmeta
+*.physics
+*.prefab
+*.prefab.meta
+*.unity
+*.c
+*.cpp
+*.h
+*.hpp
+*.o
+*.obj
+*.lib
+*.dll
+*.exe
+*.so
+*.a
+*.dylib
+*.ncb
+*.opt
+*.plg
+*.ncf
+*.aps
+*.pch
+*.res
+*.resx
+*.mdb
+*.dep
+*.csproj.user
+*.......
 ```
