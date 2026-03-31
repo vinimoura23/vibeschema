@@ -1,10 +1,42 @@
-# ArchiCanvas - Diagramas de Arquitetura
+# 🏗️ ArchiCanvas - Editor de Arquitetura de Software
 
-Um Web App moderno e minimalista para criação de diagramas de arquitetura de software com suporte a Dark Mode.
+Um editor visual moderno e minimalista para criação de diagramas de arquitetura de software, construído com React, Tailwind CSS e React Flow.
 
-![React](https://img.shields.io/badge/React-19-blue)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3-cyan)
-![Docker](https://img.shields.io/badge/Docker-Ready-green)
+![ArchiCanvas](https://img.shields.io/badge/React-19-blue?logo=react)
+![Tailwind](https://img.shields.io/badge/Tailwind-3.4-38bdf8?logo=tailwindcss)
+![React Flow](https://img.shields.io/badge/React_Flow-12-0066cc)
+![Docker](https://img.shields.io/badge/Docker-Ready-2496ed?logo=docker)
+
+## ✨ Funcionalidades
+
+### 🎨 Canvas Interativo
+- **Formas Variadas**: Retângulos, Círculos, Texto, Diamantes (decisão), Hexágonos
+- **Conexões Inteligentes**: Setas que se conectam automaticamente aos nós
+- **Arrastar e Soltar**: Movimente formas livremente pelo canvas
+- **Edição por Clique Duplo**: Edite rótulos diretamente nas formas
+- **Grid de Pontos**: Fundo com grid discreto para alinhamento preciso
+
+### 🎯 Ferramentas Avançadas
+- **Undo/Redo**: Ctrl+Z / Ctrl+Y para desfazer/refazer ações
+- **Modo Desenho**: Pressione `D` para ativar e desenhar à mão livre
+- **Seletor de Cores**: Personalize cores das formas e linhas
+- **Controle de Espessura**: Ajuste a espessura das bordas e conexões
+- **Zoom e Pan**: Controles completos de navegação
+
+### 📁 Gerenciamento de Projetos
+- **Salvar Projetos**: Salve seus diagramas no localStorage
+- **Carregar Projetos**: Acesse projetos salvos rapidamente
+- **Excluir Projetos**: Gerencie seu espaço de armazenamento
+- **Exportação**: PNG para imagens, JSON para backup/compartilhamento
+
+### 📝 Documentação Integrada
+- **Editor Markdown**: Escreva documentação ao lado do diagrama
+- **Preview em Tempo Real**: Visualize a formatação instantaneamente
+- **Estatísticas**: Conte de nós e conexões em tempo real
+
+### 🌙 Dark Mode
+- **Tema Escuro/Claro**: Alternância suave com persistência
+- **Cores Adaptativas**: Toda a interface se adapta ao tema selecionado
 
 ## 🚀 Quick Start com Docker
 
@@ -15,7 +47,7 @@ Um Web App moderno e minimalista para criação de diagramas de arquitetura de s
 docker compose up -d --build
 
 # Acessar a aplicação
-http://localhost:3000
+# http://localhost:3000
 
 # Ver logs
 docker compose logs -f
@@ -24,69 +56,39 @@ docker compose logs -f
 docker compose down
 ```
 
-### Opção 2: Docker direto
+### Opção 2: Docker Direto
 
 ```bash
 # Construir a imagem
 docker build -t arch-canvas .
 
-# Rodar o container
+# Executar o container
 docker run -d -p 3000:80 --name arch-canvas-app arch-canvas
 
 # Acessar
-http://localhost:3000
+# http://localhost:3000
 
-# Parar
+# Parar e remover
 docker stop arch-canvas-app && docker rm arch-canvas-app
 ```
 
-## ✨ Funcionalidades
-
-### Canvas Interativo
-- **Dark Mode** - Alterne entre temas claro e escuro
-- **Grid de pontos** - Fundo discreto para alinhamento
-- **Formas**: Retângulos, Círculos e Texto
-- **Conexões inteligentes** - Setas que grudam nos objetos
-- **Arrastar e soltar** - Movimente elementos livremente
-- **Edição por clique duplo** - Edite textos rapidamente
-- **Zoom e Pan** - Navegue pelo canvas com facilidade
-- **Snap to Grid** - Alinhamento automático
-
-### Barra de Ferramentas Superior
-- Botões para adicionar formas (Retângulo, Círculo, Texto)
-- Controles de Zoom (In, Out, Fit View)
-- Toggle de Dark/Light Mode
-- Exportação PNG
-- Toggle do Painel de Documentação
-
-### Painel Lateral de Documentação
-- Editor Markdown em tempo real
-- Preview renderizado instantaneamente
-- Tabs para alternar entre Editor e Preview
-- Contador de caracteres
-- Sintaxe destacada para código
-
-### Exportação
-- **PNG** - Exporta todo o canvas como imagem
-- **JSON** - Salva o diagrama completo com documentação
-
-## 🛠️ Tecnologias
-
-- **React 19** - Framework UI
-- **Vite** - Build tool ultra-rápida
-- **Tailwind CSS 3** - Estilização utilitária
-- **React Flow 11** - Canvas interativo e conexões
-- **React Markdown** - Renderização de Markdown
-- **Lucide React** - Ícones modernos
-- **@tailwindcss/typography** - Prose styling
-
 ## 💻 Desenvolvimento Local
 
+### Pré-requisitos
+- Node.js 18+ 
+- npm ou yarn
+
+### Instalação
+
 ```bash
+# Clonar repositório
+git clone <url-do-repositorio>
+cd workspace
+
 # Instalar dependências
 npm install
 
-# Rodar em desenvolvimento
+# Iniciar servidor de desenvolvimento
 npm run dev
 
 # Build de produção
@@ -96,121 +98,93 @@ npm run build
 npm run preview
 ```
 
-Acesso local: `http://localhost:5173`
+A aplicação estará disponível em `http://localhost:5173`
 
 ## 📖 Como Usar
 
 ### Adicionar Formas
-1. Clique nos ícones da barra superior (□ ○ T)
-2. A forma aparecerá em posição aleatória no canvas
-3. Arraste para reposicionar
+1. Clique em um ícone de forma na barra superior (Retângulo, Círculo, Texto, etc.)
+2. Clique em qualquer lugar do canvas para adicionar a forma
+3. Ou simplesmente clique no ícone e a forma será adicionada no centro
 
-### Criar Conexões
-1. Passe o mouse sobre uma forma
-2. Clique e arraste de um dos pontos (handles) nas bordas
-3. Solte em outra forma para conectar
-4. A seta será criada automaticamente
+### Conectar Elementos
+1. Passe o mouse sobre uma forma para ver os pontos de conexão (handles)
+2. Clique e arraste de um ponto até outro nó
+3. Solte para criar a conexão com seta inteligente
 
-### Editar Textos
-- **Clique duplo** em qualquer forma para editar
-- Digite o novo texto
-- Pressione **Enter** ou clique fora para salvar
-- Pressione **Escape** para cancelar
+### Editar Conteúdo
+- **Rótulos**: Clique duplo em qualquer forma para editar o texto
+- **Cores**: Use o seletor de cores na barra superior
+- **Espessura**: Ajuste no slider do seletor de cores
 
-### Navegação
-- **Arraste** o canvas para navegar
-- **Scroll** do mouse para zoom
-- Use os botões de zoom na barra superior
-- **MiniMap** no canto inferior direito para visão geral
+### Atalhos de Teclado
+| Atalho | Ação |
+|--------|------|
+| `Ctrl+Z` | Desfazer |
+| `Ctrl+Shift+Z` ou `Ctrl+Y` | Refazer |
+| `D` | Ativar/Desativar modo desenho |
+| `Delete` ou `Backspace` | Remover elementos selecionados |
 
-### Documentação
-1. Clique no ícone de arquivo na barra superior
-2. Escreva em Markdown no editor
-3. Alterne para a tab "Preview" para ver renderizado
-4. O conteúdo é salvo junto com o diagrama no JSON
+### Gerenciar Projetos
+1. Clique em "Salvar" para salvar o projeto atual
+2. Clique no ícone de pasta para abrir o gerenciador
+3. Selecione um projeto para carregar ou exclua os indesejados
 
-### Dicas
-- Use **Backspace/Delete** para remover elementos selecionados
-- O tema (claro/escuro) é salvo no localStorage
-- Exporte frequentemente para não perder seu trabalho
+## 🛠️ Tecnologias
+
+- **React 19** - Biblioteca UI principal
+- **React Flow** - Canvas interativo e conexões
+- **Tailwind CSS** - Estilização utilitária
+- **Lucide React** - Ícones modernos
+- **React Markdown** - Renderização de Markdown
+- **Vite** - Build tool e dev server
 
 ## 📁 Estrutura do Projeto
 
 ```
-.
+/workspace/
 ├── src/
+│   ├── App.jsx                 # Componente principal
 │   ├── components/
-│   │   ├── CustomNode.jsx    # Nós customizados (Rect, Circle, Text)
-│   │   └── Sidebar.jsx       # Painel de documentação Markdown
-│   ├── App.jsx               # Componente principal + Navbar
-│   ├── index.css             # Estilos globais + Tailwind
-│   └── main.jsx              # Entry point
-├── public/                   # Assets estáticos
-├── Dockerfile                # Configuração Docker multi-stage
-├── docker-compose.yml        # Orquestração Docker
-├── package.json              # Dependências
-├── tailwind.config.js        # Configuração Tailwind
-├── vite.config.js            # Configuração Vite
-└── README.md                 # Esta documentação
+│   │   ├── CustomNode.jsx      # Nós customizados do canvas
+│   │   ├── Sidebar.jsx         # Painel de documentação
+│   │   └── ProjectManager.jsx  # Gerenciador de projetos
+│   ├── index.css               # Estilos globais
+│   └── main.jsx                # Entry point
+├── public/                     # Arquivos estáticos
+├── Dockerfile                  # Configuração Docker
+├── docker-compose.yml          # Orquestração Docker
+├── package.json                # Dependências
+├── tailwind.config.js          # Configuração Tailwind
+└── README.md                   # Esta documentação
 ```
 
-## 🔧 Configuração Docker
+## 🔧 Troubleshooting Docker
 
-O projeto usa **multi-stage build** para otimizar o tamanho da imagem:
+### Erro: `npm ci` falha
+O Dockerfile usa `npm install` em vez de `npm ci` para evitar problemas com lockfile.
 
-1. **Stage 1 (Builder)**: Node.js 20 Alpine para build
-2. **Stage 2 (Production)**: Nginx Alpine para servir os arquivos estáticos
-
-Porta exposta: `3000:80`
-
-## 🎨 Customização
-
-### Cores do Tema
-As cores são configuradas via Tailwind no arquivo `tailwind.config.js`:
-- Light mode: `slate` palette
-- Dark mode: `slate-950` background
-
-### Adicionar Novas Formas
-1. Crie o componente em `src/components/`
-2. Registre em `nodeTypes` no `App.jsx`
-3. Adicione o botão na navbar
-
-## 🐛 Troubleshooting
-
-### Docker não inicia
-```bash
-# Verificar logs
-docker compose logs
-
-# Rebuild forçado
-docker compose up -d --build --force-recreate
-```
-
-### Erro de porta em uso
+### Erro: Porta já em uso
 Altere a porta no `docker-compose.yml`:
 ```yaml
 ports:
   - "8080:80"  # Mude 3000 para 8080
 ```
 
-### Build falha
+### Container não inicia
+Verifique os logs:
 ```bash
-# Limpar cache
-rm -rf node_modules package-lock.json
-npm install
-npm run build
+docker compose logs
 ```
 
-## 📝 Próximas Melhorias
+## 📝 Licença
 
-- [ ] Importar diagramas JSON
-- [ ] Templates pré-definidos
-- [ ] Undo/Redo (Ctrl+Z)
-- [ ] Mais formas geométricas
-- [ ] Customização de cores das conexões
-- [ ] Colaboração em tempo real
-- [ ] Auto-save no localStorage
+MIT License - sinta-se livre para usar e modificar.
 
-## 📄 Licença
+## 🤝 Contribuindo
 
-MIT License - Sinta-se livre para usar e modificar!
+Contribuições são bem-vindas! Abra issues e pull requests para melhorias.
+
+---
+
+Feito com ❤️ usando React + Tailwind CSS
