@@ -1,35 +1,30 @@
-# Architecture Canvas MVP
+# ArchiCanvas - Diagramas de Arquitetura
 
-Um Web App minimalista para criação de diagramas de arquitetura de software.
+Um Web App moderno e minimalista para criação de diagramas de arquitetura de software com suporte a Dark Mode.
+
+![React](https://img.shields.io/badge/React-19-blue)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3-cyan)
+![Docker](https://img.shields.io/badge/Docker-Ready-green)
 
 ## 🚀 Quick Start com Docker
 
-### Pré-requisitos
-- Docker instalado
-- Docker Compose (já incluso nas versões recentes do Docker)
-
-### Usando Docker Compose (Recomendado)
+### Opção 1: Docker Compose (Recomendado)
 
 ```bash
 # Construir e iniciar o container
 docker compose up -d --build
 
-# Verificar se está rodando
-docker compose ps
-
 # Acessar a aplicação
-# http://localhost:3000
+http://localhost:3000
 
-# Ver logs em tempo real
+# Ver logs
 docker compose logs -f
 
-# Parar a aplicação
+# Parar
 docker compose down
 ```
 
-> **Nota:** Nas versões mais recentes do Docker, use `docker compose` (sem o hífen). Se sua versão for antiga, use `docker-compose`.
-
-### Usando Docker diretamente
+### Opção 2: Docker direto
 
 ```bash
 # Construir a imagem
@@ -38,129 +33,184 @@ docker build -t arch-canvas .
 # Rodar o container
 docker run -d -p 3000:80 --name arch-canvas-app arch-canvas
 
-# Acessar a aplicação
-# http://localhost:3000
+# Acessar
+http://localhost:3000
 
-# Ver logs
-docker logs -f arch-canvas-app
-
-# Parar e remover o container
+# Parar
 docker stop arch-canvas-app && docker rm arch-canvas-app
 ```
 
-## Funcionalidades
+## ✨ Funcionalidades
 
 ### Canvas Interativo
-- **Fundo branco com grid discreto** (padrão de pontos)
-- **Formas disponíveis**: Círculos, Retângulos e Texto
-- **Sistema de conexões inteligentes**: Arraste das handles para conectar formas
-- **Arrastar e redimensionar**: Mova os elementos livremente pelo canvas
-- **Edição por clique duplo**: Clique duas vezes em qualquer nó para editar seu rótulo
+- **Dark Mode** - Alterne entre temas claro e escuro
+- **Grid de pontos** - Fundo discreto para alinhamento
+- **Formas**: Retângulos, Círculos e Texto
+- **Conexões inteligentes** - Setas que grudam nos objetos
+- **Arrastar e soltar** - Movimente elementos livremente
+- **Edição por clique duplo** - Edite textos rapidamente
+- **Zoom e Pan** - Navegue pelo canvas com facilidade
+- **Snap to Grid** - Alinhamento automático
 
-### Barra de Ferramentas
-- Seleção de formas (Círculo, Retângulo, Texto)
-- Exportação como JSON
-- Exportação como PNG (placeholder para implementação futura)
+### Barra de Ferramentas Superior
+- Botões para adicionar formas (Retângulo, Círculo, Texto)
+- Controles de Zoom (In, Out, Fit View)
+- Toggle de Dark/Light Mode
+- Exportação PNG
+- Toggle do Painel de Documentação
 
 ### Painel Lateral de Documentação
 - Editor Markdown em tempo real
-- Preview simultâneo do Markdown renderizado
-- Lista de nós do diagrama com edição rápida
-- Contador de elementos (nós e conexões)
-- Painel colapsável para maximizar o espaço do canvas
+- Preview renderizado instantaneamente
+- Tabs para alternar entre Editor e Preview
+- Contador de caracteres
+- Sintaxe destacada para código
 
-## Tecnologias Utilizadas
+### Exportação
+- **PNG** - Exporta todo o canvas como imagem
+- **JSON** - Salva o diagrama completo com documentação
 
-- **React 18** - Framework UI
-- **Vite** - Build tool e dev server
-- **Tailwind CSS** - Estilização utilitária
-- **React Flow (@xyflow/react)** - Biblioteca para canvas interativo e conexões
+## 🛠️ Tecnologias
+
+- **React 19** - Framework UI
+- **Vite** - Build tool ultra-rápida
+- **Tailwind CSS 3** - Estilização utilitária
+- **React Flow 11** - Canvas interativo e conexões
 - **React Markdown** - Renderização de Markdown
-- **Lucide React** - Ícones modernos e minimalistas
+- **Lucide React** - Ícones modernos
+- **@tailwindcss/typography** - Prose styling
 
-## Como Usar
-
-### Desenvolvimento Local (sem Docker)
+## 💻 Desenvolvimento Local
 
 ```bash
 # Instalar dependências
 npm install
 
-# Rodar em modo de desenvolvimento
+# Rodar em desenvolvimento
 npm run dev
-```
 
-O servidor de desenvolvimento estará disponível em `http://localhost:5173`
-
-### Build de Produção
-
-```bash
+# Build de produção
 npm run build
+
+# Preview da build
+npm run preview
 ```
 
-Os arquivos de produção serão gerados na pasta `dist/`.
+Acesso local: `http://localhost:5173`
 
-## Instruções de Uso
+## 📖 Como Usar
 
-1. **Adicionar Formas**:
-   - Selecione uma forma na barra de ferramentas superior
-   - Clique em qualquer lugar do canvas para adicionar a forma
+### Adicionar Formas
+1. Clique nos ícones da barra superior (□ ○ T)
+2. A forma aparecerá em posição aleatória no canvas
+3. Arraste para reposicionar
 
-2. **Criar Conexões**:
-   - Passe o mouse sobre uma forma para ver as handles (pontos cinzas)
-   - Clique e arraste de uma handle até outra forma
-   - A conexão será criada automaticamente com estilo de seta
+### Criar Conexões
+1. Passe o mouse sobre uma forma
+2. Clique e arraste de um dos pontos (handles) nas bordas
+3. Solte em outra forma para conectar
+4. A seta será criada automaticamente
 
-3. **Editar Elementos**:
-   - Clique duplo em qualquer nó para editar seu texto
-   - Pressione Enter ou clique fora para salvar
+### Editar Textos
+- **Clique duplo** em qualquer forma para editar
+- Digite o novo texto
+- Pressione **Enter** ou clique fora para salvar
+- Pressione **Escape** para cancelar
 
-4. **Documentação**:
-   - Use o painel lateral direito para escrever documentação em Markdown
-   - O preview é atualizado em tempo real
-   - Edite os rótulos dos nós diretamente na lista "Nodes"
+### Navegação
+- **Arraste** o canvas para navegar
+- **Scroll** do mouse para zoom
+- Use os botões de zoom na barra superior
+- **MiniMap** no canto inferior direito para visão geral
 
-5. **Exportar**:
-   - Clique em "JSON" para baixar o diagrama como arquivo JSON
-   - Clique em "PNG" para exportar como imagem (funcionalidade placeholder)
+### Documentação
+1. Clique no ícone de arquivo na barra superior
+2. Escreva em Markdown no editor
+3. Alterne para a tab "Preview" para ver renderizado
+4. O conteúdo é salvo junto com o diagrama no JSON
 
-6. **Navegação**:
-   - Use os controles no canto inferior esquerdo para zoom e pan
-   - Arraste o canvas para navegar
-   - Use a roda do mouse para zoom
+### Dicas
+- Use **Backspace/Delete** para remover elementos selecionados
+- O tema (claro/escuro) é salvo no localStorage
+- Exporte frequentemente para não perder seu trabalho
 
-## Estrutura do Projeto
+## 📁 Estrutura do Projeto
 
 ```
 .
 ├── src/
 │   ├── components/
-│   │   ├── CustomNode.jsx    # Componente personalizado de nós
-│   │   ├── Toolbar.jsx       # Barra de ferramentas superior
-│   │   └── Sidebar.jsx       # Painel lateral de documentação
-│   ├── App.jsx               # Componente principal
+│   │   ├── CustomNode.jsx    # Nós customizados (Rect, Circle, Text)
+│   │   └── Sidebar.jsx       # Painel de documentação Markdown
+│   ├── App.jsx               # Componente principal + Navbar
 │   ├── index.css             # Estilos globais + Tailwind
 │   └── main.jsx              # Entry point
-├── public/                   # Arquivos estáticos
-├── index.html                # HTML base
-├── package.json              # Dependências e scripts
-├── Dockerfile                # Configuração Docker
+├── public/                   # Assets estáticos
+├── Dockerfile                # Configuração Docker multi-stage
 ├── docker-compose.yml        # Orquestração Docker
-├── tailwind.config.js        # Configuração Tailwind CSS
-└── vite.config.js            # Configuração Vite
+├── package.json              # Dependências
+├── tailwind.config.js        # Configuração Tailwind
+├── vite.config.js            # Configuração Vite
+└── README.md                 # Esta documentação
 ```
 
-## Próximos Passos (Melhorias Futuras)
+## 🔧 Configuração Docker
 
-- [ ] Implementar exportação PNG real com html2canvas
-- [ ] Adicionar mais tipos de formas (losango, triângulo, etc.)
-- [ ] Sistema de undo/redo
-- [ ] Templates de arquitetura pré-definidos
-- [ ] Colaboração em tempo real
+O projeto usa **multi-stage build** para otimizar o tamanho da imagem:
+
+1. **Stage 1 (Builder)**: Node.js 20 Alpine para build
+2. **Stage 2 (Production)**: Nginx Alpine para servir os arquivos estáticos
+
+Porta exposta: `3000:80`
+
+## 🎨 Customização
+
+### Cores do Tema
+As cores são configuradas via Tailwind no arquivo `tailwind.config.js`:
+- Light mode: `slate` palette
+- Dark mode: `slate-950` background
+
+### Adicionar Novas Formas
+1. Crie o componente em `src/components/`
+2. Registre em `nodeTypes` no `App.jsx`
+3. Adicione o botão na navbar
+
+## 🐛 Troubleshooting
+
+### Docker não inicia
+```bash
+# Verificar logs
+docker compose logs
+
+# Rebuild forçado
+docker compose up -d --build --force-recreate
+```
+
+### Erro de porta em uso
+Altere a porta no `docker-compose.yml`:
+```yaml
+ports:
+  - "8080:80"  # Mude 3000 para 8080
+```
+
+### Build falha
+```bash
+# Limpar cache
+rm -rf node_modules package-lock.json
+npm install
+npm run build
+```
+
+## 📝 Próximas Melhorias
+
 - [ ] Importar diagramas JSON
-- [ ] Customização de cores e estilos das conexões
-- [ ] Snap to grid para alinhamento preciso
+- [ ] Templates pré-definidos
+- [ ] Undo/Redo (Ctrl+Z)
+- [ ] Mais formas geométricas
+- [ ] Customização de cores das conexões
+- [ ] Colaboração em tempo real
+- [ ] Auto-save no localStorage
 
-## Licença
+## 📄 Licença
 
-MIT
+MIT License - Sinta-se livre para usar e modificar!
