@@ -4,18 +4,30 @@ Um Web App minimalista para criação de diagramas de arquitetura de software.
 
 ## 🚀 Quick Start com Docker
 
+### Pré-requisitos
+- Docker instalado
+- Docker Compose (já incluso nas versões recentes do Docker)
+
 ### Usando Docker Compose (Recomendado)
 
 ```bash
 # Construir e iniciar o container
-docker-compose up -d --build
+docker compose up -d --build
+
+# Verificar se está rodando
+docker compose ps
 
 # Acessar a aplicação
 # http://localhost:3000
 
+# Ver logs em tempo real
+docker compose logs -f
+
 # Parar a aplicação
-docker-compose down
+docker compose down
 ```
+
+> **Nota:** Nas versões mais recentes do Docker, use `docker compose` (sem o hífen). Se sua versão for antiga, use `docker-compose`.
 
 ### Usando Docker diretamente
 
@@ -28,6 +40,9 @@ docker run -d -p 3000:80 --name arch-canvas-app arch-canvas
 
 # Acessar a aplicação
 # http://localhost:3000
+
+# Ver logs
+docker logs -f arch-canvas-app
 
 # Parar e remover o container
 docker stop arch-canvas-app && docker rm arch-canvas-app
